@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdlib>
+
+class Processor {
+public:
+    void ShowInfo() {
+        std::cout << "CPU Info:\n";
+        system("sysctl -n machdep.cpu.brand_string"); // macOS
+    }
+};
+
+class Memory {
+public:
+    void ShowInfo() {
+        std::cout << "Memory Info:\n";
+        system("vm_stat | grep 'Pages free'"); // macOS
+    }
+};
+
+class Process {
+public:
+    int pid;
+    std::string command;
+    float cpu;
+    float mem;
+    Process(int p, std::string c, float cu, float me) : pid(p), command(c), cpu(cu), mem(me) {}
+    void Show() {
+        std::cout << pid << "\t" << command << "\t" << cpu << "%\t" << mem << "%\n";
+    }
+};
+
+class ProcessMonitor {
+public:
+    void ShowProcesses() {
+        std::cout << "PID\tCOMMAND\t%CPU\t%MEM\n";
+        system("ps -e -o pid,comm,%cpu,%mem | head -10"); // macOS/Linux
+    }
+};
+
+class System {
+    Processor cpu;
+    Memory mem;
+    ProcessMonitor pm;
+public:
+    void ShowSystemInfo() {
+        std::cout << "=== System Monitor ===\n";
+        cpu.ShowInfo();
+        mem.ShowInfo();
+        pm.ShowProcesses();
+    }
+};
+
+int main() {
+    System sys;
+    sys.ShowSystemInfo();
+    return 0;
+}
