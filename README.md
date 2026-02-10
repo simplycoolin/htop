@@ -5,9 +5,10 @@ This project simulates basic autonomous vehicle (AV) safety checks by detecting 
 
 ## Files
 - **detect_risk.py** – Python script that reads vehicle log data and calculates collision risk.
+- **distance_violation.py** - Collision avoidance validator using pytest
 - **Book3.xlsx** – Sample log data containing time, speed, steering angle, distance to objects, brake, and throttle values.
 - **README.md** – Project description.
-- **safe_speed.py** -- AV Speed Validator
+- **safe_speed.py** -- AV Speed Validator using pytest
 - (Optional) future scripts for MATLAB or C++ AV test cases.
 
 ## How to Run
