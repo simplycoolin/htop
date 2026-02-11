@@ -9,7 +9,7 @@ This project simulates basic autonomous vehicle (AV) safety checks by detecting 
 - **Book3.xlsx** – Sample log data containing time, speed, steering angle, distance to objects, brake, and throttle values.
 - **README.md** – Project description.
 - **safe_speed.py** -- AV Speed Validator using pytest
--                                      - # Emergency Brake Simulation (C++) - This project simulates an autonomous vehicle's emergency braking system using C++.
+- **emer_brake.cpp ** - # Emergency Brake Simulation (C++) - This project simulates an autonomous vehicle's emergency braking system using C++.
 - **distance_safety.cpp** - “C++ AV Test: Collision Risk & Emergency Braking”
 - 
 
